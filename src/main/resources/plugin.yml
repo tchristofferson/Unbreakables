@@ -1,0 +1,7 @@
+name: Unbreakables
+main: com.tchristofferson.unbreakables.Unbreakables
+version: 1.0
+api-version: 1.14
+author: tchristofferson
+depend:
+  - Vault
