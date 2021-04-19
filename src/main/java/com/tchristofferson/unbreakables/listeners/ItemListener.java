@@ -58,7 +58,7 @@ public class ItemListener implements Listener {
         if (ArmorType.isArmor(itemStack.getType()))
             return;
 
-        if (UnbreakableUtil.isUnusable(plugin, itemStack)) {
+        if (UnbreakableUtil.isUnbreakable(plugin, itemStack) && UnbreakableUtil.isUnusable(plugin, itemStack)) {
             event.setCancelled(true);
             plugin.getMessenger().sendMessage(player, Messages.ITEM_BROKEN);
         }

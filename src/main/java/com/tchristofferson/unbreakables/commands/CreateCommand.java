@@ -2,6 +2,7 @@ package com.tchristofferson.unbreakables.commands;
 
 import co.aikar.commands.BaseCommand;
 import co.aikar.commands.annotation.CommandAlias;
+import co.aikar.commands.annotation.CommandPermission;
 import co.aikar.commands.annotation.Subcommand;
 import com.tchristofferson.unbreakables.UnbreakableUtil;
 import com.tchristofferson.unbreakables.Unbreakables;
@@ -20,6 +21,7 @@ public class CreateCommand extends BaseCommand {
     }
 
     @Subcommand("create")
+    @CommandPermission("unbreakables.create")
     public void create(Player player) {
         ItemStack itemStack = player.getInventory().getItemInMainHand();
 

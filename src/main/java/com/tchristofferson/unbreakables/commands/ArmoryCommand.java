@@ -2,6 +2,7 @@ package com.tchristofferson.unbreakables.commands;
 
 import co.aikar.commands.BaseCommand;
 import co.aikar.commands.annotation.CommandAlias;
+import co.aikar.commands.annotation.CommandPermission;
 import co.aikar.commands.annotation.Default;
 import com.tchristofferson.unbreakables.PlayerArmory;
 import org.bukkit.entity.Player;
@@ -17,6 +18,7 @@ public class ArmoryCommand extends BaseCommand {
     }
 
     @Default
+    @CommandPermission("unbreakables.create")
     public void armory(Player player) {
         Inventory inventory = armory.getArmory(player.getUniqueId());
 

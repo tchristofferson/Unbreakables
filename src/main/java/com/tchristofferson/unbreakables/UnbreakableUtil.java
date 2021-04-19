@@ -36,8 +36,7 @@ public class UnbreakableUtil {
         if (!itemStack.hasItemMeta())
             return false;
 
-        return isUnbreakableType(itemStack.getType())
-                && itemStack.getItemMeta().getPersistentDataContainer()
+        return itemStack.getItemMeta().getPersistentDataContainer()
                     .getOrDefault(new NamespacedKey(plugin, UNBREAKABLE_KEY), PersistentDataType.BYTE, (byte) 0) == (byte) 1;
     }
 
@@ -63,9 +62,10 @@ public class UnbreakableUtil {
     }
 
     public static boolean isUnusable(Plugin plugin, ItemStack itemStack) {
-        ItemMeta itemMeta = itemStack.getItemMeta();
+        if (!itemStack.hasItemMeta())
+            return false;
 
-        return itemMeta.getPersistentDataContainer()
+        return itemStack.getItemMeta().getPersistentDataContainer()
                 .getOrDefault(new NamespacedKey(plugin, UNUSABLE_KEY), PersistentDataType.BYTE, (byte) 0) == (byte) 1;
     }
 

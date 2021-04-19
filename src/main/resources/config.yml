@@ -3,7 +3,7 @@ initial-cost: 5000
 #Still enabled for normal items
 disable-anvil-repairs: false
 #Cost to repair item. If use-function-cost is true, this value isn't used
-repair-cost: 1000
+repair-cost: 5000
 #Use a dynamic price depending on the item when repairing
 use-function-cost: true
 #use-function-cost must be set to true for this to apply
@@ -12,11 +12,10 @@ function-cost:
   cost-per-enchant: 500
   #For each enchantment the level of the enchant will be multiplied by this value and added to the cost
   cost-per-enchant-level: 250
-  #If netherite item, cost is increased by this amount
+  #If netherite item, cost-per-diamond applies and this value is added on
   netherite-cost: 2000
   #If item is elytra, cost will be this plus enchantment costs
   elytra-cost: 5000
-  #Uses recipe to determine how many diamonds used to craft item.
   #A sword, for example, is created using two diamonds, therefore the cost will be x2 this value
   cost-per-diamond: 1000
   cost-per-gold: 900
